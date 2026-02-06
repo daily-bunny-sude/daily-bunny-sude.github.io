@@ -1,0 +1,12 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+    </filter>
+  </defs>
+  <g filter="url(#blur)" opacity="0.7">
+    <circle cx="50" cy="50" r="30" fill="#F43F5E" opacity="0.4" />
+    <circle cx="40" cy="40" r="20" fill="#FECDD3" />
+    <path d="M50,50 Q80,20 80,50" stroke="#FDA4AF" stroke-width="5" fill="none" />
+  </g>
+</svg>
