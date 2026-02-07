@@ -18,7 +18,7 @@ import QuickNoteWidget from './components/QuickNoteWidget';
 import MoralSupportWidget from './components/MoralSupportWidget';
 import SoftFocusWidget from './components/SoftFocusWidget';
 import ComfortClosingWidget from './components/ComfortClosingWidget';
-import HeartBurst from './components/HeartBurst';
+
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { useState, useMemo } from 'react';
 import { Heart, CloudRain, Flower } from 'lucide-react';
@@ -68,13 +68,11 @@ function App() {
     restDelta: 0.001
   });
 
-  const [showHeartTips, setShowHeartTips] = useState(true);
+
   const [isFocusMode, setIsFocusMode] = useState(false);
   const [focusTimeLeft, setFocusTimeLeft] = useState(0);
 
-  const handleAppClick = () => {
-    if (showHeartTips) setShowHeartTips(false);
-  };
+
 
   const formatFocusTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -83,7 +81,7 @@ function App() {
   };
 
   return (
-    <Box position="relative" onClick={handleAppClick} minH="100vh" overflowX="hidden" pb={20}>
+    <Box position="relative" minH="100vh" overflowX="hidden" pb={20}>
       <BackgroundParticles />
 
       {/* Focus Mode Overlay Effect */}
@@ -167,8 +165,7 @@ function App() {
         }}
       />
 
-      {/* Heart Burst Animation Layer */}
-      <HeartBurst />
+
 
       {/* High-Aesthetic Floral Overlay */}
       <Box
@@ -237,25 +234,7 @@ function App() {
         </VStack>
       </Container>
 
-      {/* Click Hint */}
-      {showHeartTips && !isFocusMode && (
-        <Box
-          position="fixed"
-          bottom={8}
-          left={8}
-          zIndex={10}
-          as={MotionBox}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 3 }}
-          pointerEvents="none"
-        >
-          <VStack spacing={2} align="start">
-            <Icon as={Heart} color="#FDA4AF" w={6} h={6} className="pulse" />
-            <Text fontSize="xs" color="gray.300" letterSpacing="widest" fontWeight="semibold">CLICK ANYWHERE</Text>
-          </VStack>
-        </Box>
-      )}
+
 
       {/* Footer Text */}
       {!isFocusMode && (
