@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Text, VStack, Icon, Image } from '@chakra-ui/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, Flower, X } from 'lucide-react';
+import qrcodeImg from '../assets/qrcode.png';
 
 const MotionBox = motion.create(Box);
 const MotionVStack = motion.create(VStack);
@@ -275,7 +276,7 @@ const ValentineEnvelope = () => {
                                         transition={{ delay: 1.5, duration: 0.8 }}
                                     >
                                         <Image
-                                            src="/src/assets/qrcode.png"
+                                            src={qrcodeImg}
                                             alt="QR Code"
                                             w="140px"
                                             h="140px"
